@@ -1,0 +1,21 @@
+.ContactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.InputsDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.Input {
+  margin-left: 10px;
+}
+
+.LabelContactForm {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}

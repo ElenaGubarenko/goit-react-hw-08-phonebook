@@ -1,0 +1,15 @@
+.ContactsList {
+  list-style: none;
+  padding: 0;
+}
+
+.ContactListItem {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Delete {
+  margin-left: 10px;
+}
