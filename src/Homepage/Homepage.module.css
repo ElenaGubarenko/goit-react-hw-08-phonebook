@@ -1,0 +1,44 @@
+.Auth {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 20%; */
+  margin-top: 20%;
+}
+
+.AuthLink {
+  color: rgb(207, 46, 38);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.HomeContainer {
+  z-index: -1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 13%;
+  /* height: 500px; */
+  width: 400px;
+  background-image: url('../Images/laters.png');
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.Home {
+  color: rgb(207, 46, 38);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Exit {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.HomeNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}

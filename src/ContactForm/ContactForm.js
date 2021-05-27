@@ -50,7 +50,7 @@ class ContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.addContact} className={styles.ContactForm}>
-        <h1>Phonebook</h1>
+        <h1>Add new contact</h1>
         <div className={styles.InputsDiv}>
           <label className={styles.LabelContactForm}>
             Name
@@ -80,7 +80,9 @@ class ContactForm extends Component {
             />
           </label>
         </div>
-        <button type="submit">Add contact</button>
+        <button className="button" type="submit">
+          Add contact
+        </button>
       </form>
     );
   }

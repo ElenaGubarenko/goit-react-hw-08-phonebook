@@ -2,6 +2,9 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import selectors from '../redux/selectors/selectors';
 import operations from '../redux/operations/operations';
+import routes from '../routes';
+import styles from './Login.module.css';
+import { Route, NavLink } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -23,28 +26,37 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.createUserToLogin}>
-        <label>
-          Mail
-          <input
-            type="input"
-            name="email"
-            placeholder="Your mail"
-            value={this.state.loginMail}
-            onChange={this.changeState}
-          ></input>
-        </label>
-        <label>
-          Password
-          <input
-            type="input"
-            name="password"
-            placeholder="Your password"
-            value={this.state.loginPassword}
-            onChange={this.changeState}
-          ></input>
-        </label>
-        <button type="submit">Login</button>
+      <form className={styles.Form} onSubmit={this.createUserToLogin}>
+        <div className={styles.Inputs}>
+          <label className={styles.Label}>
+            Mail
+            <input
+              className={styles.Input}
+              type="input"
+              name="email"
+              placeholder="Your mail"
+              value={this.state.loginMail}
+              onChange={this.changeState}
+            ></input>
+          </label>
+          <label className={styles.Label}>
+            Password
+            <input
+              className={styles.Input}
+              type="input"
+              name="password"
+              placeholder="Your password"
+              value={this.state.loginPassword}
+              onChange={this.changeState}
+            ></input>
+          </label>
+        </div>
+        <button className={`button ${styles.FormButton}`} type="submit">
+          Login
+        </button>
+        <NavLink className="button" to={routes.homepage}>
+          Home
+        </NavLink>
       </form>
     );
   }

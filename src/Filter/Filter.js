@@ -20,8 +20,9 @@ class Filter extends Component {
   render() {
     return (
       <div className={styles.FilterDiv}>
-        <p className={styles.FindTitle}>Find contacts by name</p>
+        <p className={styles.FindTitle}>Find contact by name</p>
         <input
+          className={styles.Input}
           onChange={this.filterContactsByName}
           value={this.props.filter}
           name="filter"

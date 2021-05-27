@@ -27,10 +27,7 @@ const authUserReducer = createReducer(user, {
   [actions.registerSuccess]: (state, action) => action.payload,
   [actions.loginSuccess]: (state, action) => action.payload.user,
   [actions.getCurrentUserSuccess]: (state, action) => action.payload,
-  [actions.logoutSuccess]: (state, action) => [
-    (state.name = ''),
-    (state.email = ''),
-  ],
+  [actions.logoutSuccess]: () => user,
 });
 
 const isAuthed = createReducer(false, {

@@ -4,7 +4,7 @@ import ContactsList from '../ContactsList';
 // import ContactForm from '../ContactForm';
 import Container from '../Container';
 import Homepage from '../Homepage';
-import Header from '../Header';
+// import Header from '../Header';
 import routes from '../routes';
 import { connect } from 'react-redux';
 import actions from '../redux/actions/actions';
@@ -13,6 +13,8 @@ import selectors from '../redux/selectors/selectors';
 // import { Route } from 'react-router-dom';
 import PrivateRoute from '../PrivateRoute';
 import PublicRoute from '../PublicRoute';
+import Register from '../Register';
+import Login from '../Login';
 
 class PhoneBook extends Component {
   componentDidMount() {
@@ -22,13 +24,28 @@ class PhoneBook extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        {/* <Header /> */}
         {/* {this.props.loader ? <h2>Loading...</h2> : null} */}
         <PublicRoute exact path={routes.homepage} component={Homepage} />
         <PrivateRoute
           path={routes.contacts}
           redirectTo={routes.login}
           component={ContactsList}
+        />
+
+        <PublicRoute
+          exact
+          restricted
+          path={routes.register}
+          redirectTo={routes.login}
+          component={Register}
+        />
+        <PublicRoute
+          exact
+          restricted
+          path={routes.login}
+          redirectTo={routes.contacts}
+          component={Login}
         />
       </Container>
     );

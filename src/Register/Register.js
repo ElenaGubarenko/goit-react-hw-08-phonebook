@@ -1,7 +1,10 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, NavLink } from 'react-router-dom';
 import selectors from '../redux/selectors/selectors';
 import operations from '../redux/operations/operations';
+import routes from '../routes';
+import styles from './Register.module.css';
 
 class Register extends Component {
   state = {
@@ -29,38 +32,48 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.createUserToRegistrate}>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            placeholder="Olol Ololol"
-            value={this.state.registerName}
-            onChange={this.changeState}
-          ></input>
-        </label>
-        <label>
-          Mail
-          <input
-            type="mail"
-            name="email"
-            placeholder="ololol@mail.com"
-            value={this.state.registerMail}
-            onChange={this.changeState}
-          ></input>
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            name="password"
-            placeholder="ololol123"
-            value={this.state.registerPassword}
-            onChange={this.changeState}
-          ></input>
-        </label>
-        <button type="submit">Register</button>
+      <form className={styles.Form} onSubmit={this.createUserToRegistrate}>
+        <div className={styles.Inputs}>
+          <label className={styles.Label}>
+            Name
+            <input
+              className={styles.Input}
+              type="text"
+              name="name"
+              placeholder="Olol Ololol"
+              value={this.state.registerName}
+              onChange={this.changeState}
+            ></input>
+          </label>
+          <label className={styles.Label}>
+            Mail
+            <input
+              className={styles.Input}
+              type="mail"
+              name="email"
+              placeholder="ololol@mail.com"
+              value={this.state.registerMail}
+              onChange={this.changeState}
+            ></input>
+          </label>
+          <label className={styles.Label}>
+            Password
+            <input
+              className={styles.Input}
+              type="password"
+              name="password"
+              placeholder="ololol123"
+              value={this.state.registerPassword}
+              onChange={this.changeState}
+            ></input>
+          </label>
+        </div>
+        <button className={`button ${styles.FormButton}`} type="submit">
+          Register
+        </button>
+        <NavLink className="button" to={routes.homepage}>
+          Home
+        </NavLink>
       </form>
     );
   }

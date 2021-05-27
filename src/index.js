@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'modern-normalize/modern-normalize.css';
 import { BrowserRouter } from 'react-router-dom';
+import styles from './styles.css';
 
 import store from './redux/store';
 import { Provider } from 'react-redux';

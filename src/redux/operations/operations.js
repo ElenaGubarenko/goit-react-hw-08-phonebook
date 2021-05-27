@@ -86,18 +86,17 @@ const logoutUser = () => dispatch => {
     return;
   }
   dispatch(actions.logoutRequest());
-  axios
-    .post('https://connections-api.herokuapp.com/users/logout', {
-      headers: {
-        Authorization: storageToken,
-      },
-    })
-    .then(() =>
-      dispatch(
-        actions.logoutSuccess(),
-        localStorage.removeItem('token'),
-        (storageToken = ''),
-      ),
+  axios({
+    method: 'post',
+    url: 'https://connections-api.herokuapp.com/users/logout',
+    headers: {
+      Authorization: storageToken,
+    },
+  })
+    .then(
+      () => dispatch(actions.logoutSuccess()),
+      localStorage.removeItem('token'),
+      (storageToken = ''),
     )
     .catch(error => dispatch(actions.logoutError(error)));
 };

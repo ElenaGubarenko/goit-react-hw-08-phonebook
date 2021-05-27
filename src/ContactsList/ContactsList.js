@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
 import { Component } from 'react';
 import Filter from '../Filter';
+import Header from '../Header';
 import PropTypes from 'prop-types';
 import styles from './ContactsList.module.css';
 import { connect } from 'react-redux';
 import operations from '../redux/operations/operations';
 import selectors from '../redux/selectors/selectors';
 import ContactForm from '../ContactForm';
+import img from '../Images/main.png';
 
 class ContactsList extends Component {
   componentDidMount() {
@@ -16,8 +18,10 @@ class ContactsList extends Component {
   render() {
     return (
       <div>
+        <img className={styles.Logo} src={img}></img>
+        <Header />
         <ContactForm />
-        <h1>Contacts</h1>
+        <h1 className={styles.Title}>All contacts</h1>
         <Filter />
         <ul className={styles.ContactsList}>
           {(this.props.filter !== ''
@@ -26,9 +30,12 @@ class ContactsList extends Component {
           ).map(contact => {
             return (
               <li className={styles.ContactListItem} key={uuidv4()}>
-                {contact.name}: {contact.number}
+                <div className={styles.NameNumber}>
+                  <div>{contact.name}:</div>
+                  <div>{contact.number}</div>
+                </div>
                 <button
-                  className={styles.Delete}
+                  className="button"
                   onClick={() => this.props.deleteContact(contact.id)}
                   type="button"
                 >
@@ -38,6 +45,7 @@ class ContactsList extends Component {
             );
           })}
         </ul>
+        {/* <img className={styles.Logo} src={img}></img> */}
       </div>
     );
   }
