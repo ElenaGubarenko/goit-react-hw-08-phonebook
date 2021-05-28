@@ -1,25 +1,35 @@
-/* @media screen and (max-width: 100px) {
+@media screen and (min-width: 360px) {
+  .NameNumber {
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    min-width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .ContactsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .Logo {
     z-index: -1;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0%;
+    left: -305px;
     position: fixed;
   }
-} */
-
-.ContactsList {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .ContactListItem {
   margin: 5px 0;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -29,24 +39,14 @@
 
 .Title {
   text-align: center;
-}
-
-.NameNumber {
-  margin-right: 20px;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
-  min-width: 400px;
-  display: flex;
-  justify-content: space-between;
 }
 
-@media screen and (min-width: 360px) {
-  .Logo {
-    z-index: -1;
-    position: absolute;
-    bottom: 0%;
-    left: -295px;
-    position: fixed;
+@media screen and (min-width: 580px) {
+  .NameNumber {
+    min-width: 400px;
+    font-size: 15px;
   }
 }
 
@@ -56,18 +56,3 @@
     left: 0;
   }
 }
-
-/* .Logo {
-  z-index: -1;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-} */
-
-/* @media screen and (max-width: 360px) {
-  .Logo {
-    bottom: 0;
-    left: -295px;
-  }
-} */

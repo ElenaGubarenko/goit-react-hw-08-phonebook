@@ -1,3 +1,13 @@
+@media screen and (min-width: 360px) {
+  .Input {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border: 1px solid rgb(207, 46, 38);
+    padding: 3px;
+    border-radius: 5px;
+    width: 250px;
+  }
+}
 .Form {
   padding: 100px;
   display: flex;
@@ -10,12 +20,10 @@
   margin-bottom: 20px;
 }
 
-.Input {
-  margin-bottom: 20px;
-  margin-left: 20px;
-  border: 1px solid rgb(207, 46, 38);
-  padding: 3px;
-  border-radius: 5px;
+@media screen and (min-width: 480px) {
+  .Input {
+    width: 300px;
+  }
 }
 
 .Inputs {

@@ -50,7 +50,7 @@ class ContactForm extends Component {
   render() {
     return (
       <form onSubmit={this.addContact} className={styles.ContactForm}>
-        <h1>Add new contact</h1>
+        <h1 className={styles.Title}>Add new contact</h1>
         <div className={styles.InputsDiv}>
           <label className={styles.LabelContactForm}>
             Name

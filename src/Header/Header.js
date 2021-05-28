@@ -1,12 +1,9 @@
 import { Component } from 'react';
-// import Register from '../Register';
-// import Login from '../Login';
 import { connect } from 'react-redux';
 import operations from '../redux/operations/operations';
 import { NavLink } from 'react-router-dom';
 import routes from '../routes';
 import selectors from '../redux/selectors/selectors';
-// import PublicRoute from '../PublicRoute';
 import styles from './Header.module.css';
 
 class Header extends Component {
@@ -35,21 +32,6 @@ class Header extends Component {
             </div>
           </div>
         )}
-
-        {/* <PublicRoute
-          exact
-          restricted
-          path={routes.register}
-          redirectTo={routes.login}
-          component={Register}
-        />
-        <PublicRoute
-          exact
-          restricted
-          path={routes.login}
-          redirectTo={routes.contacts}
-          component={Login}
-        /> */}
       </div>
     );
   }
@@ -66,5 +48,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-// export default Header;

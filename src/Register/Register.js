@@ -40,7 +40,7 @@ class Register extends Component {
               className={styles.Input}
               type="text"
               name="name"
-              placeholder="Olol Ololol"
+              placeholder="Name"
               value={this.state.registerName}
               onChange={this.changeState}
             ></input>
@@ -51,7 +51,7 @@ class Register extends Component {
               className={styles.Input}
               type="mail"
               name="email"
-              placeholder="ololol@mail.com"
+              placeholder="YuorMail@mail.com"
               value={this.state.registerMail}
               onChange={this.changeState}
             ></input>
@@ -62,7 +62,7 @@ class Register extends Component {
               className={styles.Input}
               type="password"
               name="password"
-              placeholder="ololol123"
+              placeholder="Password at least 7 characters"
               value={this.state.registerPassword}
               onChange={this.changeState}
             ></input>
